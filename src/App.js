@@ -34,8 +34,6 @@ function App() {
         return await response.json();
     };
 
-
-
     return (
         <div className="container App">
             <div className={"instructions text-center"}>
@@ -60,5 +58,3 @@ function App() {
 }
 
 export default App;
-
-//const {id, title, price, image, hasDiscount} = card
