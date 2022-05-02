@@ -1,4 +1,3 @@
-import './App.css';
 import {useEffect, useState} from "react";
 
 // https://assets.codepen.io/1082881/data.json
@@ -36,27 +35,30 @@ function App() {
     };
 
 
+
     return (
         <div className="container App">
             <div className={"instructions text-center"}>
                 <h1>Front-end Code Test</h1>
                 <h3>Parse and Render Test</h3>
             </div>
-            <div className="row" >
-                {cards.map(card =>
-                    <div className={"col-12 col-md-4"} key={card.id}>
+            <div className="row">
+                {cards.map(({id, name, description, price}) => (
+                    <div className={"col-12 col-md-4"} key={id}>
                         <div className="card bg-light m-1 text-left">
                             <div className="card-body text-left">
-                                <h3 className="card-title">{card.name}</h3>
-                                <p>{card.description}</p>
-                                {card.price && <p>Price: ${card.price}</p>}
+                                <h3 className="card-title">{name}</h3>
+                                <p>{description}</p>
+                                {price && <p>Price: ${price}</p>}
                             </div>
                         </div>
                     </div>
-                )}
+                ))}
             </div>
         </div>
     );
 }
 
 export default App;
+
+//const {id, title, price, image, hasDiscount} = card
